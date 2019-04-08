@@ -60,3 +60,4 @@ ipch/
 *.psess
 *.vsp
 *.vspx
+/_ReSharper.Caches

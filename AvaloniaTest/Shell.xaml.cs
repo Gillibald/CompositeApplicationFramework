@@ -1,9 +1,11 @@
-﻿using Avalonia;
+﻿using System.Collections;
+
+using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+
 using CompositeApplicationFramework.Interfaces;
-using System.Collections;
 
 namespace AvaloniaTest
 {
@@ -28,9 +30,7 @@ namespace AvaloniaTest
                 return false;
             }
 
-            var items = itemsControl.Items as IList;
-
-            if(items == null)
+            if (!(itemsControl.Items is IList items))
             {
                 items = new AvaloniaList<object>();
 

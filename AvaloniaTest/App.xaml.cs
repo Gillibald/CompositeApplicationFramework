@@ -5,9 +5,15 @@ namespace AvaloniaTest
 {
     public class App : Application
     {
-        public override void Initialize()
+        private Bootstrapper _bootstrapper;
+
+        public override async void Initialize()
         {
-            AvaloniaXamlLoader.Load(this);           
+            AvaloniaXamlLoader.Load(this);
+
+            _bootstrapper = new Bootstrapper();
+
+            await _bootstrapper.RunAsync();
         }
     }
 }

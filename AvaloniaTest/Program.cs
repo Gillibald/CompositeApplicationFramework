@@ -3,9 +3,11 @@ using Avalonia.Logging.Serilog;
 
 namespace AvaloniaTest
 {
+    using System.Threading;
+
     class Program
     {
-        private static Bootstrapper _bootstrapper;
+        private static readonly CancellationTokenSource _tokenSource = new CancellationTokenSource();
 
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
@@ -20,15 +22,9 @@ namespace AvaloniaTest
 
         // Your application's entry point. Here you can initialize your MVVM framework, DI
         // container, etc.
-        private static async void AppMain(Application app, string[] args)
+        private static void AppMain(Application app, string[] args)
         {
-            _bootstrapper = new Bootstrapper();
-
-            var shell = new Shell();        
-
-            app.Run(shell);
-
-            await _bootstrapper.RunAsync(shell);
+            app.Run(null);
         }
     }
 }

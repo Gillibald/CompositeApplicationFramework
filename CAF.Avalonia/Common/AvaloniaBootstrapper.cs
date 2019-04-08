@@ -1,5 +1,6 @@
 ﻿using CompositeApplicationFramework.Base;
 using CompositeApplicationFramework.Interfaces;
+
 using Unity;
 using Unity.Lifetime;
 
